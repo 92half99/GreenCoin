@@ -1,31 +1,38 @@
 import SwiftUI
 
 struct MainTabView: View {
-  var body: some View {
-    TabView {
-      MainPageView()
-        .tabItem {
-          Image(systemName: "house.fill")
-          Text("Home")
-        }
+    var body: some View {
+        TabView {
+            HomeView()
+                .tabItem {
+                    Label("Dashboard", systemImage: "house.fill")
+                }
 
-      SuggestedActionsView()
-        .tabItem {
-          Image(systemName: "checkmark.square.fill")
-          Text("Actions")
-        }
+            SuggestedActionsView()
+                .tabItem {
+                    Label("Actions", systemImage: "checkmark.square.fill")
+                }
 
-      RewardsView()
-        .tabItem {
-          Image(systemName: "gift.fill")
-          Text("Rewards")
-        }
+            RewardsView()
+                .tabItem {
+                    Label("Rewards", systemImage: "gift.fill")
+                }
 
-      ProgressPageView()
-        .tabItem {
-          Image(systemName: "chart.bar.fill")
-          Text("Progress")
+            ProgressPageView()
+                .tabItem {
+                    Label("Progress", systemImage: "chart.bar.fill")
+                }
+
+            ImpactExplorerView()
+                .tabItem {
+                    Label("Explore", systemImage: "globe.americas")
+                }
+
+            TipsView()
+                .tabItem {
+                    Label("Tips", systemImage: "leaf")
+                }
         }
+        .accentColor(.greenCoinPrimary)
     }
-  }
 }
